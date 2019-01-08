@@ -4,9 +4,9 @@ var nodeMailer = require("nodemailer");
 var EmailTemplate = require('email-templates').EmailTemplate;
 
 
-exports.sendPasswordReset = function (email, title, description,from,password) {
+exports.sendPasswordReset = function (toemail, title, description,loginname,loginpassword,username,password,loginlink) {
 
-  var sender = 'smtps://'+from;   // The emailto use in sending the email
+  var sender = 'smtps://'+username;   // The emailto use in sending the email
   //(Change the @ symbol to %40 or do a url encoding )
   var password = password;  // password of the email to use
 
@@ -15,14 +15,14 @@ exports.sendPasswordReset = function (email, title, description,from,password) {
   var sendSummaryEmail = transporter.templateSender(new EmailTemplate('./template/summaryMails'));
 
     sendResetPasswordLink({
-        to: email,
+        to: toemail,
         subject: 'News Feeds of the Day'
     }, {
         title: title,
         description: description,
-        content: "content",
-        image: "image",
-        source: "source"
+        username: loginname,
+        password: loginpassword,
+        loginlink: loginlink
     }, function (err, info) {
         if (err) {
          //   console.log(err)
