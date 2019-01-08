@@ -1,12 +1,11 @@
 {
   "name": "node-mailer-registrationtemplate",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "This is a Template Node mailer which uses basic HTML Card effects to send a Title and Description to a User",
   "main": "server.js",
   "dependencies": {
     "ejs": "^2.6.1",
     "email-templates": "2.7.1",
-    "express": "^4.16.4",
     "nodemailer": "2.7.2"
   },
   "devDependencies": {},
@@ -19,6 +18,14 @@
     "ejs",
     "mailer"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srikanthstorm/node-mailer-registrationtemplate.git"
+  },
   "author": "Srikanth Doddi",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srikanthstorm/node-mailer-registrationtemplate/issues"
+  },
+  "homepage": "https://github.com/srikanthstorm/node-mailer-registrationtemplate#readme"
 }
