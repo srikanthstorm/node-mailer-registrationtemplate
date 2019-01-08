@@ -1,0 +1,227 @@
+<div class="wrapper wrapper-full-page">
+        <div class="login-page header-filter">
+                <p class="success">{{message}}</p>
+                <div class="container">
+               <div class="col-lg-12 col-md-12 col-sm-12 ml-auto mr-auto" align="center">
+                   
+                  <div class="card register">
+                      <div class="card-header card-header-icon card-header-rose">
+                          <div class="card-icon">
+                              <h4 class="card-title">Register User</h4>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                        <form action="" method="post" name="form" (ngSubmit)="formAddUser(f.value)" #f="ngForm">
+                            <div class="card-body" *ngIf="showDetail == true">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_fname.invalid &&(user_fname.dirty || user_fname.touched),
+                                            'has-success': user_fname.valid && (user_fname.dirty || user_fname.touched)}">
+                                              <label class="bmd-label-floating">First Name</label>
+                                              <input type="text" class="form-control" id="user_fname" name="user_fname" [(ngModel)]="model.user_fname" 
+                                              #user_fname="ngModel" required  >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_fname.errors && (user_fname.dirty || user_fname.touched)">
+                                                <p *ngIf="user_fname?.errors.required">First Name is required</p>
+                                                <p *ngIf="user_fname?.errors.pattern">Invalid First Name</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_lname.invalid &&(user_lname.dirty || user_lname.touched),
+                                            'has-success': user_lname.valid && (user_lname.dirty || user_lname.touched)}">
+                                              <label class="bmd-label-floating">Last Name</label>
+                                              <input type="text" class="form-control" id="user_lname" name="user_lname" [(ngModel)]="model.user_lname" 
+                                              #user_lname="ngModel" required  >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_lname.errors && (user_lname.dirty || user_lname.touched)">
+                                                <p *ngIf="user_lname?.errors.required">Last Name is required</p>
+                                                <p *ngIf="user_lname?.errors.pattern">Invalid Name</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_businessname.invalid &&(user_businessname.dirty || user_businessname.touched),
+                                            'has-success': user_businessname.valid && (user_businessname.dirty || user_businessname.touched)}">
+                                              <label class="bmd-label-floating">Business Name</label>
+                                              <input type="text" class="form-control" id="user_businessname" name="user_businessname" [(ngModel)]="model.user_businessname" 
+                                              #user_businessname="ngModel" required  >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_businessname.errors && (user_businessname.dirty || user_businessname.touched)">
+                                                <p *ngIf="user_businessname?.errors.required">Business Name is required</p>
+                                                <p *ngIf="user_businessname?.errors.pattern">Invalid Business Name</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_businessEmail.invalid &&(user_businessEmail.dirty || user_businessEmail.touched),
+                                            'has-success': user_businessEmail.valid && (user_businessEmail.dirty || user_businessEmail.touched)}">
+                                              <label class="bmd-label-floating">Email ID</label>
+                                              <input type="text" class="form-control" id="user_businessEmail" name="user_businessEmail" [(ngModel)]="model.user_businessEmail" 
+                                              #user_businessEmail="ngModel" required  >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_businessEmail.errors && (user_businessEmail.dirty || user_businessEmail.touched)">
+                                                <p *ngIf="user_businessEmail?.errors.required">Email ID is required</p>
+                                                <p *ngIf="user_businessEmail?.errors.pattern">Invalid Email ID</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_businessphone1.invalid &&(user_businessphone1.dirty || user_businessphone1.touched),
+                                            'has-success': user_businessphone1.valid && (user_businessphone1.dirty || user_businessphone1.touched)}">
+                                              <label class="bmd-label-floating">Contact Number</label>
+                                              <input type="text" class="form-control" id="user_businessphone1" name="user_businessphone1" [(ngModel)]="model.user_businessphone1" 
+                                              #user_businessphone1="ngModel" required  >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_businessphone1.errors && (user_businessphone1.dirty || user_businessphone1.touched)">
+                                                <p *ngIf="user_businessphone1?.errors.required">Contact Numberis required</p>
+                                                <p *ngIf="user_businessphone1?.errors.pattern">Invalid Contact Number</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_businessphone2.invalid &&(user_businessphone2.dirty || user_businessphone2.touched),
+                                            'has-success': user_businessphone2.valid && (user_businessphone2.dirty || user_businessphone2.touched)}">
+                                              <label class="bmd-label-floating">Alternative Number</label>
+                                              <input type="text" class="form-control" id="user_businessphone2" name="user_businessphone2" [(ngModel)]="model.user_businessphone2" 
+                                              #user_businessphone2="ngModel"   >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_businessphone2.errors && (user_businessphone2.dirty || user_businessphone2.touched)">
+                                                <p *ngIf="user_businessphone2?.errors.required">Alternative Number is required</p>
+                                                <p *ngIf="user_businessphone2?.errors.pattern">Invalid Alternative Number</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_address.invalid &&(user_address.dirty || user_address.touched),
+                                            'has-success': user_address.valid && (user_address.dirty || user_address.touched)}">
+                                              <label class="bmd-label-floating">Address </label>
+                                              <input type="text" class="form-control" id="user_address" name="user_address" 
+                                              [(ngModel)]="model.user_address" #user_address="ngModel" required> 
+                                             </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_address.errors && (user_address.dirty || user_address.touched)">
+                                                <p *ngIf="user_address?.errors.required">Address is required</p>
+                                                <p *ngIf="user_address?.errors.pattern">Address must be 6-10 characters long with letters & digits</p>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_city.invalid &&(user_city.dirty || user_city.touched),
+                                            'has-success': user_city.valid && (user_city.dirty || user_city.touched)}">
+                                              <label class="bmd-label-floating">City </label>
+                                              <input type="text" class="form-control" id="user_city" name="user_city" 
+                                              [(ngModel)]="model.user_city" #user_city="ngModel"  required> 
+                                             </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_city.errors && (user_city.dirty || user_city.touched)">
+                                                <p *ngIf="user_city?.errors.required">user_city is required</p>
+                                                <p *ngIf="user_city?.errors.pattern">Invalid City</p>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_state.invalid &&(user_state.dirty || user_state.touched),
+                                            'has-success': user_state.valid && (user_state.dirty || user_state.touched)}">
+                                              <label class="bmd-label-floating">State </label>
+                                              <input type="user_state" class="form-control" id="user_state" name="user_state" 
+                                              [(ngModel)]="model.user_state" #user_state="ngModel" required> 
+                                             </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_state.errors && (user_state.dirty || user_state.touched)">
+                                                <p *ngIf="user_state?.errors.required">State is required</p>
+                                                <p *ngIf="user_state?.errors.pattern">Invalid State</p>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': user_country.invalid &&(user_country.dirty || user_country.touched),
+                                            'has-success': user_country.valid && (user_country.dirty || user_country.touched)}">
+                                              <label class="bmd-label-floating">Country </label>
+                                              <input type="user_country" class="form-control" id="user_country" name="user_country" 
+                                              [(ngModel)]="model.user_country" #user_country="ngModel" required> 
+                                             </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="user_country.errors && (user_country.dirty || user_country.touched)">
+                                                <p *ngIf="user_country?.errors.required">Country is required</p>
+                                                <p *ngIf="user_country?.errors.pattern">Invalid Coountry</p>
+                                            </div>
+                                    </div>
+                                   <div class="col-md-4">
+                                        <div class="form-group" [ngClass]="{ 'has-danger': user_zip.invalid &&(user_zip.dirty || user_zip.touched),
+                                    'has-success': user_zip.valid && (user_zip.dirty || user_zip.touched)}">
+                                      <label class="bmd-label-floating">Zip Code </label>
+                                      <input type="user_zip" class="form-control" id="user_zip" name="user_zip" 
+                                      [(ngModel)]="model.user_zip" #user_zip="ngModel" required> 
+                                     </div>
+                      
+                                    <div  class="help-block txt1" *ngIf="user_zip.errors && (user_zip.dirty || user_zip.touched)">
+                                        <p *ngIf="user_zip?.errors.required">Zip Code is required</p>
+                                        <p *ngIf="user_zip?.errors.pattern">Invalid Zip Code</p>
+                                    </div>
+                                   </div>
+                                </div>
+                                <a class="btn pull-right"(click)="next()"> Next</a>
+                            </div>
+                            <div class="card-body"   *ngIf="showPassword == true">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': username.invalid &&(username.dirty || username.touched),
+                                            'has-success': username.valid && (username.dirty || username.touched)}">
+                                              <label class="bmd-label-floating">Username</label>
+                                              <input type="text" class="form-control" id="username" name="username" [(ngModel)]="model.username" 
+                                              #username="ngModel" required  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,10}" >
+                                            </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="username.errors && (username.dirty || username.touched)">
+                                                <p *ngIf="username?.errors.required">User ID is required</p>
+                                                <p *ngIf="username?.errors.pattern">Invalid User ID</p>
+                                              </div>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                    </div>
+                                    <div class="col-md-6">
+                                            <div class="form-group" [ngClass]="{ 'has-danger': password.invalid &&(password.dirty || password.touched),
+                                            'has-success': password.valid && (password.dirty || password.touched)}">
+                                              <label class="bmd-label-floating">Password </label>
+                                              <input type="password" class="form-control" id="password" name="password" 
+                                              [(ngModel)]="model.password" #password="ngModel"  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}" required> 
+                                             </div>
+                              
+                                            <div  class="help-block txt1" *ngIf="password.errors && (password.dirty || password.touched)">
+                                                <p *ngIf="password?.errors.required">Password is required</p>
+                                                <p *ngIf="password?.errors.pattern">Password must be 6-10 characters long with letters & digits</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="form-group" [ngClass]="{ 'has-danger': cpassword.invalid &&(cpassword.dirty || cpassword.touched),
+                                                'has-success': cpassword.valid && (cpassword.dirty || cpassword.touched)}">
+                                                  <label class="bmd-label-floating">Confirm password  </label>
+                                                  <input type="password" class="form-control" id="cpassword" name="cpassword" 
+                                                  [(ngModel)]="model.cpassword" #cpassword="ngModel"  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,10}" required> 
+                                                 </div>
+                                  
+                                                <div  class="help-block txt1" *ngIf="cpassword.errors && (cpassword.dirty || cpassword.touched)">
+                                                    <p *ngIf="cpassword?.errors.required">Confirm Password is required</p>
+                                                    <p *ngIf="cpassword != password">Passwords don't match</p>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="button-div">
+                                        <button type="submit" class="btn pull-right">Update</button>
+                                  </div>
+                             </div> 
+                        </form>
+                        <div class="signup p-t-5"> <a routerLink='/login' class="txt2 m-l-5 text-blue">
+                          Go Back
+                       </a></div>
+                    </div>
+                  </div>
+              </div>
+            
+          </div>
+            
+        </div>
+    </div>       
+                      
+                   
+      
+

@@ -1,0 +1,96 @@
+<!-- <div class="mainpanel">
+<nav class="mainnavbar navbar navbar-default" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"  (click)="toggleNavbar()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar bar1"></span>
+                <span class="icon-bar bar2"></span>
+                <span class="icon-bar bar3"></span>
+            </button>
+            <a class="navbar-brand" routerLink="dashboard">RSS Feeds</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li >
+                    <a routerLink="./adminPreview" (click)="toggleNavbar()">
+                    <i class="material-icons" >dashboard</i></a>                 
+                </li>
+                <li class="dropdown">
+                    <a mat-button [matMenuTriggerFor]="menu">
+                        <p>{{user?.user_fname}}(Admin)</p>
+                        <b class="caret"></b></a>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item routerLink="./dashboard2" (click)="toggleNavbar()"><a>DashBoard 2</a></button>
+                        <button mat-menu-item routerLink="./manageUsers" (click)="toggleNavbar()"><a  >Manage Users</a></button>
+                        <button mat-menu-item routerLink="./manageTags" (click)="toggleNavbar()"><a >Manage Tags</a></button>
+                        <button mat-menu-item routerLink="./manageSources" (click)="toggleNavbar()"><a  >Manage Sources</a></button>
+                    </mat-menu>
+                </li>
+                <li>
+                    <a (click)="logout()"  >
+                    <i class="material-icons">power_settings_new</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+</div> -->
+<div class="mainpanel">
+     <nav class="mainnavbar navbar navbar-default" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"  (click)="toggleNavbar()">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <a class="navbar-brand" routerLink="dashboard">RSS Feeds</a>
+            </div>
+            <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="menu">
+                        <a routerLink="./adminPreview" (click)="toggleNavbar()">
+                        <i class="material-icons" >dashboard</i></a>                 
+                    </li>
+                    <li *ngIf="hideHR == true"><a > |</a>  </li>
+                    <li class="menu">
+                        <a routerLink="./manageUsers" (click)="toggleNavbar()"> Manage Users</a>                 
+                    </li>
+                    <li *ngIf="hideHR == true"><a > |</a>  </li>
+                     <li class="menu">
+                        <a routerLink="./manageTags" (click)="toggleNavbar()">Manage Tags</a>                 
+                    </li>
+                    <li *ngIf="hideHR == true"><a > |</a>  </li>
+                     <li >
+                        <a  routerLink="./manageSources" (click)="toggleNavbar()">Manage Sources</a>                 
+                    </li>
+                    <li *ngIf="hideHR == true"><a > |</a>  </li>
+                    <li >
+                        <a ><p style="font-weight: bolder;font-size:12px;">{{user?.user_fname}}(Admin)</p></a>                 
+                    </li>
+                    <!--  <li class="dropdown">
+                        <a mat-button [matMenuTriggerFor]="menu">
+                            <p>{{user?.user_fname}}(Admin)</p>
+                            <b class="caret" ></b></a>
+                        <mat-menu #menu="matMenu">
+                           <button mat-menu-item routerLink="./dashboard2" (click)="toggleNavbar()"><a>DashBoard 2</a></button>
+                            <button mat-menu-item routerLink="./manageUsers" (click)="toggleNavbar()"><a  >Manage Users</a></button>
+                            <button mat-menu-item routerLink="./manageTags" (click)="toggleNavbar()"><a >Manage Tags</a></button>
+                            <button mat-menu-item routerLink="./manageSources" (click)="toggleNavbar()"><a  >Manage Sources</a></button>
+                        </mat-menu>
+                    </li> -->
+                    <li *ngIf="hideHR == true"><a > |</a>  </li>
+                     <li>
+                        <a (click)="logout()"  >
+                        <i class="material-icons">power_settings_new</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> 
+        
+        <router-outlet></router-outlet>
+        </div>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+         <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <style>
+            *{
+                font-family: 'Muli',sans-serif;
+                }
+            .heading{
+                width:100%;
+                font-size:18px;
+                text-align:center;
+                padding-top:10px;
+                color:#68B3C8;
+            }
+            p{
+                font-size:18px;
+                font-weight:500;
+            }
+            li{
+                color:black;
+            }
+            li:hover{
+                color:#68B3C8;
+                text-decoration: none;
+            }
+        </style>
+   </head>
+    <body>
+        <div class="container" style="padding-top:5%;padding-bottom:5%;">
+        <h1 class="heading">
+            Summary of all Stories Mailed in the last 24 hours 
+        </h1>
+        <hr>
+        <ul>
+                        <% feeds.forEach(function(feed){ %>
+                           <% var feed1 = feed._id.primary_keyword%>
+                           <% var titles = feed.title%>
+                           <p style="color:#F3BB45;"><%= feed1 %></p>
+                           <ul>
+                                <% titles.forEach(function(title){ %>
+                                    <li><%= title %></li>
+                                    <% }) %>
+                           </ul>
+                           
+                        <% }) %>
+                     
+                        </ul>
+                 
+
+                </ul>
+        </div> 
+    </body>
+</html>

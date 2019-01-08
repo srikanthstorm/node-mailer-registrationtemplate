@@ -1,0 +1,122 @@
+<a type="submit" class="back" (click)="close()"  ><i class="material-icons" style="font-size:18px !important;" title="Cancel">
+    cancel</i></a>
+    <div class="card add-form">
+    <div class="card-header card-header-icon card-header-rose">
+      <div class="card-icon">
+        <i class="material-icons">cloud_download</i>
+      </div>
+      <h4 class="card-title">Add New Source </h4>
+    </div>
+    <p class="success">{{message}}</p>
+    <div class="card-body">
+      <form action="" method="post" name="form" action="" method="post" name="form" (ngSubmit)="formAddSource(f.value)" #f="ngForm">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="form-group" [ngClass]="{ 'has-danger': source_name.invalid &&(source_name.dirty || source_name.touched),
+            'has-success': source_name.valid && (source_name.dirty || source_name.touched)}">
+              <label class="bmd-label-floating">Name</label>
+              <input type="text" class="form-control" id="source_name" name="source_name" [(ngModel)]="model.source_name" #source_name="ngModel"
+              required>
+            </div>
+            <div  class="help-block txt1" *ngIf="source_name.errors && (source_name.dirty || source_name.touched)">
+                <p *ngIf="source_name?.errors.required"> Name is required</p>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group" [ngClass]="{ 'has-danger': source_abbreviation.invalid &&(source_abbreviation.dirty || source_abbreviation.touched),
+              'has-success': source_abbreviation.valid && (source_abbreviation.dirty || source_abbreviation.touched)}">
+                <label class="bmd-label-floating">Abbreviation </label>
+                <input type="text" class="form-control" id="source_abbreviation" name="source_abbreviation" [(ngModel)]="model.source_abbreviation" #source_abbreviation="ngModel"
+              required>
+              </div>
+
+              <div  class="help-block txt1" *ngIf="source_abbreviation.errors && (source_abbreviation.dirty || source_abbreviation.touched)">
+                  <p *ngIf="source_abbreviation?.errors.required">Source Abbreviation is required</p>
+                </div>
+          </div>
+          <div class="col-md-9">
+            <div class="form-group" [ngClass]="{ 'has-danger': source_heading.invalid &&(source_heading.dirty || source_heading.touched),
+            'has-success': source_heading.valid && (source_heading.dirty || source_heading.touched)}">
+              <label class="bmd-label-floating">Source Heading</label>
+              <input type="text" class="form-control" id="source_heading" name="source_heading" [(ngModel)]="model.source_heading" #source_heading="ngModel"
+              required>
+            </div>
+            <div  class="help-block txt1" *ngIf="source_heading.errors && (source_heading.dirty || source_heading.touched)">
+                <p *ngIf="source_heading?.errors.required"> Source Heading is required</p>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div class="form-group" [ngClass]="{ 'has-danger': source_type.invalid &&(source_type.dirty || source_type.touched),
+              'has-success': source_type.valid && (source_type.dirty || source_type.touched)}">
+                <label class="bmd-label-floating">Source Type</label>
+                <select class="form-control" id="source_type" name="source_type" [(ngModel)]="model.source_type" 
+                #source_type="ngModel" required>
+                <option disabled>Select one</option>
+                <option value="all">All </option>
+                <option value="api">API </option>
+                <option value="rss">RSS</option>
+                </select>
+              </div>
+
+              <div  class="help-block txt1" *ngIf="source_type.errors && (source_type.dirty || source_type.touched)">
+                  <p *ngIf="source_type?.errors.required">Source Type is required</p>
+                </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-md-12">
+              <div class="form-group" [ngClass]="{ 'has-danger': link.invalid &&(link.dirty || link.touched),
+              'has-success': link.valid && (link.dirty || link.touched)}">
+                <label class="bmd-label-floating">External Link</label>
+                <input type="text" class="form-control" id="link" name="link" [(ngModel)]="model.link" #link="ngModel"
+                required>
+              </div>
+
+              <div  class="help-block txt1" *ngIf="link.errors && (link.dirty || link.touched)">
+                  <p *ngIf="link?.errors.required">External Link is required</p>
+                </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-md-12">
+              <div class="form-group" [ngClass]="{ 'has-danger': api_key.invalid &&(api_key.dirty || api_key.touched),
+              'has-success': api_key.valid && (api_key.dirty || api_key.touched)}">
+                <label class="bmd-label-floating">API Key</label>
+                <input type="text" class="form-control" id="api_key" name="api_key" [(ngModel)]="model.api_key" #api_key="ngModel">
+              </div>
+              <div  class="help-block txt1" *ngIf="api_key.errors && (api_key.dirty || api_key.touched)">
+                  <p *ngIf="api_key?.errors.required">API Key is required</p>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+           <!--  <div class="col-md-6">
+                <div class="form-group" [ngClass]="{ 'has-danger': userid.invalid &&(userid.dirty || userid.touched),
+                'has-success': userid.valid && (userid.dirty || userid.touched)}">
+                  <label class="bmd-label-floating">User ID</label>
+                  <input type="text" class="form-control" id="userid" name="userid" [(ngModel)]="model.userid" #userid="ngModel"
+                  >
+                </div>
+  
+                <div  class="help-block txt1" *ngIf="userid.errors && (userid.dirty || userid.touched)">
+                    <p *ngIf="userid?.errors.required">User ID  is required</p>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" [ngClass]="{ 'has-danger': password.invalid &&(password.dirty || password.touched),
+                'has-success': password.valid && (password.dirty || password.touched)}">
+                  <label class="bmd-label-floating">Password</label>
+                  <input type="text" class="form-control" id="password" name="password" [(ngModel)]="model.password" #password="ngModel"
+                  >
+                </div>
+  
+                <div  class="help-block txt1" *ngIf="password.errors && (password.dirty || password.touched)">
+                    <p *ngIf="password?.errors.required">Password is required</p>
+                  </div>
+            </div> -->
+        </div>
+        <div class="button-div">
+            <button type="submit" class="btn pull-right">Submit</button>
+        </div>
+        <div class="clearfix"></div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<a type="submit" class="back" (click)="close()"  ><i class="material-icons" style="font-size:18px !important;" title="Cancel">
+  cancel</i></a>
+  <div class="card add-form">
+  <div class="card-header card-header-icon card-header-rose">
+      <div class="card-icon">
+          <i class="material-icons">get_app</i>
+        </div>
+        <h4 class="card-title">Create New Pipeline 
+          </h4>
+  </div>
+  <p class="success">{{message}}</p>
+  <div class="card-body" align="center">
+    <form action="" method="post" name="form" action="" method="post" name="form" (ngSubmit)="formAddPipeline(f.value)" #f="ngForm">
+      <mat-form-field >
+        <mat-select placeholder="Select a Source" (selectionChange)="getbyArticle($event.value)" 
+        [(ngModel)]="article" name="article" id="article">
+          <mat-option *ngFor="let article of sources" [value]="article._id">
+              {{article.source_name}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br><br><br><br>
+      <div class="button-div">
+          <button type="submit" class="btn pull-right">Create</button>
+      </div>
+      <div class="clearfix"></div>
+    </form>
+  </div>
+</div>
+

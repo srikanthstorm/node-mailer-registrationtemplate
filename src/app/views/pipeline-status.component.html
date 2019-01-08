@@ -1,0 +1,32 @@
+<a type="submit" class="back" (click)="close()"  ><i class="material-icons" style="font-size:18px !important;" title="Cancel">
+  cancel</i></a>
+  <div class="card add-form" style="margin-top:5%;">
+  <div class="card-header card-header-icon card-header-rose">
+      <div class="card-icon">
+          <i class="material-icons">get_app</i>
+        </div>
+        <h4 class="card-title">Pipeline Status 
+          </h4>
+          
+  </div>
+  <p class="success">{{message}}</p>
+  <div class="card-body row" *ngIf="this.showStatus == true">
+    <div class="col-md-8 status-col" align="center">
+      <p>The Pipeline</p>
+       <p class="text-yellow">( {{pipeline?.name}} )</p> 
+       <p>is currently</p>
+      <h1 [ngStyle]="{'color':getColor(pipeline?.status)}">{{pipeline?.status}}</h1>
+     
+    </div>
+    <div class="col-md-4 status-col status-button">
+      <button type="submit" class="btn" (click)="startPipeline()" *ngIf="showStart == true">Start</button>
+      <br>
+      <button type="submit" class="btn" (click)="stopPipeline()"  *ngIf="showStop == true">Stop</button>
+    </div>
+  </div>
+  <div class="card-body row pipeline" *ngIf="this.showError == true">
+    <p class="error">There is no <span>Pipeline</span> created to this source</p>
+    <br>
+      <button  type="submit" class="btn pull-right" (click)="createPipeline()">Create Pipeline</button>
+  </div>
+</div>
