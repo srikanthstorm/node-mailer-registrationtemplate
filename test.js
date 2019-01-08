@@ -1,2 +1,2 @@
 var obj = require('./server.js');
-obj.sendEmailtoUsers("srikanthnaidu512@gmail.com","title","username\npassword","developers.svec%40gmail.com",'infinity@svec');
+obj.sendEmailtoUsers("", "Promotion", "Greetings candidate you have been successfully registered for the xyz","testuser","loginpassword","","","google.co.in");

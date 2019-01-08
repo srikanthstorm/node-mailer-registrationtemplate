@@ -1,7 +1,7 @@
 
 var mail = require('./server/routes/Emailservice.js');
-module.exports.sendEmailtoUsers = function(to,title,description,fromEmail,password){
-         mail.sendPasswordReset(to,title,description,fromEmail,password);
+module.exports.sendEmailtoUsers = function (toemail, title, description,loginname,loginpassword,username,password,loginlink) {
+         mail.sendPasswordReset(toemail, title, description,loginname,loginpassword,username,password,loginlink);
 
 
 }
