@@ -10,7 +10,7 @@ npm i node-mailer-registrationtemplate
 
  
 ```bash
- var mailer = require('node-mailer-template')
+ var mailer = require('node-mailer-registrationtemplate')
 mailer.sendEmailtoUsers("toEmail","Title","Description","registeredusername","registeredpassword","fromemail","password","login URL");
 ```
 
