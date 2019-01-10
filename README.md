@@ -11,7 +11,9 @@ npm i node-mailer-template
  
 ```bash
  var mailer = require('node-mailer-template')
-mailer.sendEmailtoUsers("toEmail","Title","Description","registeredusername","registeredpassword","fromemail","password","login URL");```
+mailer.sendEmailtoUsers("toEmail","Title","Description","registeredusername","registeredpassword","fromemail","password","login URL");
+```
+
 ### Example
 
 ```bash
