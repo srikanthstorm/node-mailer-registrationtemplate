@@ -3,7 +3,7 @@
 ## Install the package with NPM:
 
 ```bash
-npm i node-mailer-template
+npm i node-mailer-registrationtemplate
 ```
 
 ## Usage
