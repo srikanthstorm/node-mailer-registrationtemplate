@@ -1,6 +1,6 @@
 {
   "name": "node-mailer-registrationtemplate",
-  "version": "0.0.9",
+  "version": "1.0.2",
   "description": "This is a Template Node mailer which uses basic HTML Card effects to send a Title and Description to a User",
   "main": "server.js",
   "dependencies": {
