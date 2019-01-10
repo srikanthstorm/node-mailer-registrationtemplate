@@ -11,14 +11,17 @@ npm i node-mailer-template
  
 ```bash
  var mailer = require('node-mailer-template')
- mailer.sendEmailtoUsers("toAddress","title","Description","fromEmail",'password');
+ mailer.sendEmailtoUsers("recipientEmail","Title","Description","senderEmail",'Password');
 ```
 ### Example
 
- mailer.sendEmailtoUsers("xyz@gmail.com","Title","Description","yourusername%40gmail.com",'password');
-
+```bash
+ mailer.sendEmailtoUsers("toemail@gmail.com","Title","Description","youremail%40gmail.com",'password');
+```
  ![Screenshot](https://github.com/srikanthstorm/node-mailer-registrationtemplate/blob/master/template.png)
 
 
- Note: `@ in the from email should be mentioned as %40 or else your from email will fail to work, It can be normal for to email`
+ ```bash
+ Note: @ in the from sender email should be mentioned as %40 or else your from email will fail to work, It can be normal for to recipient email
+ ```
  if any requirements or updates mail us at srikanthnaidu512@gmail.com
