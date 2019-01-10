@@ -11,12 +11,12 @@ npm i node-mailer-template
  
 ```bash
  var mailer = require('node-mailer-template')
- mailer.sendEmailtoUsers("recipientEmail","Title","Description","senderEmail",'Password');
-```
+mailer.sendEmailtoUsers("toEmail","Title","Description","registeredusername","registeredpassword","fromemail","password","login URL");```
 ### Example
 
 ```bash
- mailer.sendEmailtoUsers("toemail@gmail.com","Title","Description","youremail%40gmail.com",'password');
+ mailer.sendEmailtoUsers("toemail@gmail.com","Title","Description","registeredusername","registeredpassword","fromemail%40gmail.com","password","login URL");
+
 ```
  ![Screenshot](https://github.com/srikanthstorm/node-mailer-registrationtemplate/blob/master/template.png)
 
