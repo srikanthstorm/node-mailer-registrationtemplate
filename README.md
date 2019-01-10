@@ -2,14 +2,17 @@
 
 ## Install the package with NPM:
 
-Run `npm i node-mailer-template`
-
+```bash
+npm i node-mailer-template
+```
 
 ## Usage
 
+ 
+```bash
  var mailer = require('node-mailer-template')
  mailer.sendEmailtoUsers("toAddress","title","Description","fromEmail",'password');
-
+```
 ### Example
 
  mailer.sendEmailtoUsers("xyz@gmail.com","Title","Description","yourusername%40gmail.com",'password');
